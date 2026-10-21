@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/employee-manager.iml" filepath="$PROJECT_DIR$/.idea/employee-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/employee-manager/employee-manager.iml" filepath="$PROJECT_DIR$/employee-manager/employee-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/employee-manager-springboot.iml" filepath="$PROJECT_DIR$/.idea/employee-manager-springboot.iml" />
     </modules>
   </component>
 </project>
