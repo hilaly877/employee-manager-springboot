@@ -1,0 +1,47 @@
+:root { --primary: #4b2589; --light: #efe7fb; --dark: #1e2233; --danger: #d93a3a; --ok: #1f9d55;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Segoe UI", Arial, sans-serif; background: #f6f4fb; color: var(--dark); line
+height: 1.5; }
+
+.topbar { background: var(--primary); color: #fff; text-align: center; padding: 26px 16px; }
+.topbar p { opacity: .8; }
+.footer { text-align: center; padding: 20px; color: #6b7088; font-size: .9rem; }
+
+.container { width: min(1000px, 94%); margin: 26px auto; display: grid; gap: 22px; }
+.container.narrow { width: min(560px, 94%); }
+
+.card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(30,
+34, 51, .08); }
+.card h2 { color: var(--primary); margin-bottom: 16px; font-size: 1.25rem; }
+
+.badge { background: var(--light); color: var(--primary); border-radius: 20px; padding: 2px
+12px; font-size: .95rem; }
+
+.field { margin-bottom: 14px; }
+label { display: block; font-weight: 600; margin-bottom: 4px; }
+input, select { width: 100%; padding: 10px; border: 1px solid #cfc7e3; border-radius: 8px; font:
+inherit; }
+input:focus, select:focus { outline: 2px solid var(--primary); }
+.error { color: var(--danger); display: block; margin-top: 3px; }
+
+.btn { display: inline-block; padding: 9px 20px; border-radius: 8px; border: 1px solid #cfc7e3;
+background: #fff; color: var(--dark); text-decoration: none; cursor: pointer; font: inherit; }
+.btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn.danger { background: var(--danger); border-color: var(--danger); color: #fff; }
+.btn.small { padding: 5px 14px; font-size: .9rem; }
+.btn:hover { opacity: .88; }
+
+.alert { padding: 12px 16px; border-radius: 8px; font-weight: 600; }
+.alert.success { background: #dff5e8; color: #14653a; }
+.alert.danger { background: #fbe0e0; color: #8a1f1f; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #ece7f6; white-space:
+nowrap; }
+thead th { background: var(--dark); color: #fff; }
+tbody tr:hover { background: #faf7ff; }
+.empty { text-align: center; color: #6b7088; padding: 24px; }
+.actions { display: flex; gap: 8px; }
+.actions form { display: inline; }
