@@ -31,6 +31,17 @@
     <section class="card">
         <h2>Registered Employees <span class="badge"
                                       th:text="${#lists.size(employees)}">0</span></h2>
+        <form class="search-form" th:action="@{/employees}" method="get">
+            <label for="keyword">Search by full name</label>
+            <div class="search-controls">
+                <input id="keyword" name="keyword" type="search"
+                       placeholder="Enter a name"
+                       th:value="${keyword}">
+                <button type="submit" class="btn primary">Search</button>
+                <a class="btn" th:if="${keyword != null and !keyword.isEmpty()}"
+                   th:href="@{/employees}">Clear</a>
+            </div>
+        </form>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -41,7 +52,12 @@
                 </thead>
                 <tbody>
                 <tr th:if="${#lists.isEmpty(employees)}">
-                    <td colspan="8" class="empty">No employees registered yet.</td>
+                    <td colspan="8" class="empty"
+                        th:text="${keyword == null or keyword.isEmpty()
+                            ? 'No employees registered yet.'
+                            : 'No employees match your search.'}">
+                        No employees registered yet.
+                    </td>
                 </tr>
                 <tr th:each="employee : ${employees}">
                     <td th:text="${employee.id}"></td>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -38,9 +39,10 @@ public class EmployeeController {
 
     //READ: show the form and the table of all employees
     @GetMapping("/employees")
-    public String list(Model model){
+    public String list(@RequestParam(required = false) String keyword, Model model){
         model.addAttribute("employee",new Employee());
-        model.addAttribute("employees",service.findAll());
+        model.addAttribute("keyword", keyword == null ? "" : keyword);
+        model.addAttribute("employees",service.findAll(keyword));
         return "employees";
     }
 
