@@ -25,6 +25,10 @@ inherit; }
 input:focus, select:focus { outline: 2px solid var(--primary); }
 .error { color: var(--danger); display: block; margin-top: 3px; }
 
+.search-form { margin-bottom: 18px; }
+.search-controls { display: flex; gap: 8px; align-items: center; }
+.search-controls input { flex: 1; }
+
 .btn { display: inline-block; padding: 9px 20px; border-radius: 8px; border: 1px solid #cfc7e3;
 background: #fff; color: var(--dark); text-decoration: none; cursor: pointer; font: inherit; }
 .btn.primary { background: var(--primary); border-color: var(--primary); color: #fff; }

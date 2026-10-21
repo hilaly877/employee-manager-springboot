@@ -20,6 +20,12 @@ public class EmployeeService {
         return repository.findAll();
     }
 
+    public List<Employee> findAll(String keyword){
+        return keyword == null || keyword.isBlank()
+                ? repository.findAll()
+                : repository.findByFullNameContainingIgnoreCase(keyword.trim());
+    }
+
     public Optional<Employee> findById(Long id){
         return repository.findById(id);
     }
