@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header class="topbar">
+    <h1>Employee Registration System</h1>
+    <p>Edit employee details</p>
+</header>
+
+<main class="container narrow">
+    <section class="card">
+        <h2>Edit Employee #<span th:text="${employee.id}"></span></h2>
+        <form th:action="@{/employees/{id}/update(id=${employee.id})}" th:object="${employee}"
+              method="post" novalidate>
+            <div th:replace="~{fragments :: fields}"></div>
+            <button type="submit" class="btn primary">Update Employee</button>
+            <a th:href="@{/employees}" class="btn">Cancel</a>
+        </form>
+    </section>
+</main>
+
+<footer class="footer">COSC 32133 Lab sheet 5</footer>
+</body>
+</html>
